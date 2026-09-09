@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imperium — the Roman economy, c. 200 AD</title>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+</head>
+<body>
+<div id="sidebar">
+  <header>
+    <h1>IMPERIVM</h1>
+    <div class="tagline">The Roman economy, c. 200 AD — real geography (ORBIS), real prices (Diocletian's Edict)</div>
+  </header>
+
+  <div id="totals"></div>
+
+  <section>
+    <h4>View</h4>
+    <div id="viewRadios"></div>
+    <select id="comFilter"></select>
+  </section>
+
+  <section>
+    <h4>Shocks</h4>
+    <div id="shockList"></div>
+  </section>
+
+  <section>
+    <h4 id="edictToggle" class="toggle">What things cost (Edict of 301) ▾</h4>
+    <div id="edictBody" class="collapsible"></div>
+  </section>
+
+  <section>
+    <h4 id="aboutToggle" class="toggle">About the model ▾</h4>
+    <div id="aboutBody" class="collapsible">
+      <p>Freight moves over the <b>ORBIS</b> network (Scheidel &amp; Meeks, Stanford): 678 sites, 2,208 road, river and sea segments, each with a real cost in <i>denarii per kg of grain</i> — the same unit as <b>Diocletian's Price Edict</b>, so a good's price in any city is its origin price plus real freight along the cheapest route.</p>
+      <p>Cities eat their province's rural surplus first, then buy grain from the exporting provinces — Egypt, Africa, Sicily — cheapest delivered price first. Sea freight is ~50× cheaper than road, which is why everything important happens on the water.</p>
+      <p>Populations are scholarly estimates for the Severan peak (total ≈ 56 M). Consumption rates and mine outputs are stylised; prices and freight are the real data.</p>
+    </div>
+  </section>
+
+  <footer>ORBIS © Stanford (CC-BY) · coastline: Natural Earth</footer>
+</div>
+
+<div id="map"></div>
+<div id="legend"></div>
+<div id="detail"></div>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="js/graph.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
