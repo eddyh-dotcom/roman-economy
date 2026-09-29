@@ -12,7 +12,7 @@
 <div id="sidebar">
   <header>
     <h1>IMPERIVM</h1>
-    <div class="tagline">The Roman economy, c. 200 AD — real geography (ORBIS), real prices (Diocletian's Edict)</div>
+    <div class="tagline">The Roman economy, c. 200 AD — real roads (Itiner-e), sea lanes (ORBIS), cities (Hanson), prices (Diocletian's Edict)</div>
   </header>
 
   <div id="totals"></div>
@@ -21,11 +21,21 @@
     <h4>View</h4>
     <div id="viewRadios"></div>
     <select id="comFilter"></select>
+    <select id="fiscalMode">
+      <option value="tax">Who pays the state, and who it pays</option>
+      <option value="trade">Trade balance in the model</option>
+      <option value="gap">Hopkins' test: coin out vs trade</option>
+    </select>
   </section>
 
   <section>
     <h4>Shocks</h4>
     <div id="shockList"></div>
+  </section>
+
+  <section>
+    <h4>Map layers</h4>
+    <div id="layerList"></div>
   </section>
 
   <section>
@@ -36,13 +46,18 @@
   <section>
     <h4 id="aboutToggle" class="toggle">About the model ▾</h4>
     <div id="aboutBody" class="collapsible">
-      <p>Freight moves over the <b>ORBIS</b> network (Scheidel &amp; Meeks, Stanford): 678 sites, 2,208 road, river and sea segments, each with a real cost in <i>denarii per kg of grain</i> — the same unit as <b>Diocletian's Price Edict</b>, so a good's price in any city is its origin price plus real freight along the cheapest route.</p>
-      <p>Cities eat their province's rural surplus first, then buy grain from the exporting provinces — Egypt, Africa, Sicily — cheapest delivered price first. Sea freight is ~50× cheaper than road, which is why everything important happens on the water.</p>
-      <p>Populations are scholarly estimates for the Severan peak (total ≈ 56 M). Consumption rates and mine outputs are stylised; prices and freight are the real data.</p>
+      <p><b>Transport.</b> Roads are the <b>Itiner-e</b> network (de Soto, Pažout, Brughmans et al. 2025): 299,000 km of Roman road, at ORBIS's wagon rate of 0.035 <i>d.c.</i> per kg per km — dearer on lesser roads and steep grades. Sea and river lanes are <b>ORBIS</b> (Scheidel &amp; Meeks, Stanford). Costs are in <i>denarii per kg of grain</i>, the unit of <b>Diocletian's Price Edict</b>, so a good's price anywhere is its origin price plus freight along the cheapest route. Sea freight is ~50× cheaper than road.</p>
+      <p><b>Cities.</b> The 1,362 towns of Hanson's <i>Urban Geography of the Roman World</i> (OXREP Cities Database) that existed c. 200, plus 28 caravan, frontier and Bosporan towns beyond his coverage at hand-estimated sizes. Populations come from built-up area by Hanson &amp; Ortman's formula (41.8 × ha<sup>1.336</sup>); towns with no recorded area get the median for their Barrington Atlas rank. Where the formula would put more than a third of a province in towns — Greece above all, where Hellenistic walls enclose much empty ground — the figures are scaled down. Province totals (≈ 56 M) are unchanged; the countryside absorbs the difference.</p>
+      <p><b>Food.</b> The army eats first: each garrison requisitions its province's surplus, and the state ships the rest. Rome's annona has first claim on African and Egyptian grain. Cities eat what remains of their province's surplus, then buy from the exporting provinces, cheapest first.</p>
+      <p><b>The army.</b> 33 legions, ≈250,000 auxiliaries placed after Holder's reconstruction of the Hadrianic deployment, the fleets and the Rome garrison: ≈490,000 men. Each costs its all-in pay and keep, after Duncan-Jones.</p>
+      <p><b>Wages.</b> Allen (2009): the Edict's labourer earns 25 <i>d.c.</i> a day plus a food allowance; a family needs three 'bare bones' baskets plus rent. The wage is the same everywhere; the prices are not.</p>
+      <p><b>Taxes and trade.</b> Hopkins (1980): taxes flow from the rich interior provinces to Rome and the frontiers, and the coin can only come back by trade. Output is ≈680 kg of wheat a head (Scheidel &amp; Friesen 2009); the tax rate is whatever covers the army, Rome and provincial government.</p>
+      <p id="aboutSites"></p>
+      <p>Consumption rates, source shares and several parameters are stylised; the geography, prices and freight rates are real data.</p>
     </div>
   </section>
 
-  <footer>ORBIS © Stanford (CC-BY) · coastline: Natural Earth</footer>
+  <footer>Roads: Itiner-e v1.3 (CC-BY 4.0) · Sea &amp; river lanes: ORBIS © Stanford (CC-BY) · Cities: Hanson 2016, OXREP · <span id="footSites"></span>Coastline: Natural Earth</footer>
 </div>
 
 <div id="map"></div>

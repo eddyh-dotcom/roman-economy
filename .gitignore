@@ -3,3 +3,6 @@
 .venv/
 __pycache__/
 *.log
+
+# large raw input, fetched by tools/fetch_raw.sh
+data/raw/itinere_roads.geojson

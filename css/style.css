@@ -59,7 +59,7 @@ section h4 {
 }
 .radio { display: block; padding: 3px 0; cursor: pointer; }
 .radio input { accent-color: var(--accent); margin-right: 6px; }
-#comFilter {
+#comFilter, #fiscalMode {
   margin-top: 8px; width: 100%;
   background: var(--panel2); color: var(--ink);
   border: 1px solid var(--line); border-radius: 5px;
@@ -153,6 +153,27 @@ td.good { color: var(--good); }
   display: inline-block; width: 9px; height: 9px; border-radius: 50%;
   margin-right: 6px; vertical-align: 0;
 }
+
+/* ---------- army, provinces, sites ---------- */
+.garrison { background: none; border: none; }
+.garrison i {
+  display: block; box-sizing: border-box;
+  border: 1.5px solid #0e161c; border-radius: 2px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+#legend i.sq, #detail i.sq { border-radius: 2px; }
+#detail h2 i.sq { display: inline-block; width: 13px; height: 13px; margin-right: 8px; vertical-align: 1px; }
+.provLabel {
+  background: none; border: none; box-shadow: none;
+  color: #e9e1cc; font-size: 10.5px; letter-spacing: 0.5px;
+  text-shadow: 0 0 4px #000, 0 0 2px #000;
+  pointer-events: none;
+}
+.leaflet-tooltip .unit { color: var(--ink-dim); font-size: 11px; }
+#detail .popsrc { margin-top: 4px; font-size: 11.5px; }
+.tbl td.left { text-align: left; font-size: 11.5px; color: var(--ink-dim); }
+.tbl.two td:nth-child(2) { text-align: right; white-space: nowrap; }
+.tbl tr.good td { color: var(--good); }
 
 /* scrollbars */
 ::-webkit-scrollbar { width: 9px; }
